@@ -1,48 +1,23 @@
 package BAV_Lite_Prod;
 
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import junit.framework.Assert;
-import kong.unirest.Unirest;
+import static org.testng.Assert.assertEquals;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.http.HttpResponse;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
-import io.restassured.path.json.JsonPath;
-
-import io.restassured.response.Response;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-//import org.json.JSONObject;
-import org.json.simple.JSONObject;
-import org.json.JSONString;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.junit.runner.Request;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import baseTest.BaseClass;
 import files.ReUsableMethods;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 
-import static io.restassured.RestAssured.given;
-import static org.testng.Assert.assertEquals;
 
 import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.HashMap;
 
 //import org.json.Assertions;
 
