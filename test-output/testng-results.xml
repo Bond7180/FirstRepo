@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-23T13:45:09 IST" name="Default suite" finished-at="2021-07-23T13:45:17 IST" duration-ms="8451">
+  <suite started-at="2021-07-23T14:31:05 IST" name="Default suite" finished-at="2021-07-23T14:31:05 IST" duration-ms="457">
     <groups>
     </groups>
-    <test started-at="2021-07-23T13:45:09 IST" name="Default test" finished-at="2021-07-23T13:45:17 IST" duration-ms="8451">
+    <test started-at="2021-07-23T14:31:05 IST" name="Default test" finished-at="2021-07-23T14:31:05 IST" duration-ms="457">
       <class name="RC_Lite_Prod.TC_Valid_Authentication_100">
-        <test-method signature="APIResponse()[pri:0, instance:RC_Lite_Prod.TC_Valid_Authentication_100@20d525]" started-at="2021-07-23T13:45:09 IST" name="APIResponse" finished-at="2021-07-23T13:45:17 IST" duration-ms="8393" status="PASS">
+        <test-method signature="APIResponse()[pri:0, instance:RC_Lite_Prod.TC_Valid_Authentication_100@20d525]" started-at="2021-07-23T14:31:05 IST" name="APIResponse" finished-at="2021-07-23T14:31:05 IST" duration-ms="387" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- APIResponse -->

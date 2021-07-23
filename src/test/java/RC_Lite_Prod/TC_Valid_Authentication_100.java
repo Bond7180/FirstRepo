@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import junit.framework.Assert;
 import kong.unirest.Unirest;
+import lombok.experimental.var;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,12 +37,16 @@ import org.junit.runner.Request;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import baseTest.BaseClass;
 import files.ReUsableMethods;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -98,7 +103,45 @@ public class TC_Valid_Authentication_100 extends BaseClass {
 		m1.put("mode", mode);
 		m1.put("data", dt);
 
-		String response = RestAssured.given()
+
+	/*	Map<String, Object> m1 = new HashMap<>();
+		// var values = new HashMap<String, String>() {{
+		m1.put("vehicle_registration_number", vehicle_registration_number);
+		m1.put ("consent", consent);
+		m1.put("consent_text", consent_text);
+	        }};
+
+	        var objectMapper = new ObjectMapper();
+	        String requestBody = objectMapper
+	                .writeValueAsString(values);*/
+		
+		 HttpClient client = HttpClient.newHttpClient();
+	        HttpRequest request = HttpRequest.newBuilder()
+	               // .uri(URI.create("https://httpbin.org/post"))
+	            //    .POST(HttpRequest.BodyPublishers.ofString(requestBody))
+	            //    .build();
+	        		
+	        		.header("Content-Type", ContentType1)
+
+					// request.header("Content-Length","<calculated when request is sent>");
+					// request.header("Host","<calculated when request is sent>");
+					.header("User-Agent", UserAgent1).header("Accept", Accept1).header("Accept-Encoding", AcceptEncoding1)
+					//.header("Connection", Connection1).header("auth", auth1)
+
+					.header("app-id", A).header("api-key", K)
+
+					.uri(URI.create("https://httpbin.org/post"))
+					.POST(HttpRequest.BodyPublishers.ofString("m1"))
+					.build();
+
+					//.post(p1).then().assertThat().log().all().extract().response().asString();
+
+	   /*     HttpResponse<String> response = client.send(request,
+	                HttpResponse.BodyHandlers.ofString());
+		*/
+		
+		
+	/*	String response = RestAssured.given()
 
 				.header("Content-Type", ContentType1)
 
@@ -112,10 +155,10 @@ public class TC_Valid_Authentication_100 extends BaseClass {
 				.baseUri(p).body(m1).when()
 
 				.post(p1).then().assertThat().log().all().extract().response().asString();
-
+*/
 		System.out.println("MAP :" + dt);
 
-		JsonPath js = ReUsableMethods.rawToJson(response);
+	/*/	JsonPath js = ReUsableMethods.rawToJson(request);
 		String id = js.get("response_code");
 
 		String name = js.get("result.user_name");
@@ -129,7 +172,7 @@ public class TC_Valid_Authentication_100 extends BaseClass {
 		System.out.println("Response Message is :" + msg);
 		System.out.println("Billable is :" + bill);
 
-		assertEquals(id, "100");
+		assertEquals(id, "100");*/
 
 	}
 
