@@ -101,7 +101,7 @@ public class TC_Valid_Authentication_100 extends BaseClass {
 		System.out.println("MAP :" + dt);
 
 		JsonPath js = ReUsableMethods.rawToJson(response);
-		String id = js.get("response_code");
+		int id = js.get("response_code");
 
 		String name = js.get("result.address.district_name");
 		String msg = js.get("response_message");
@@ -114,7 +114,7 @@ public class TC_Valid_Authentication_100 extends BaseClass {
 		System.out.println("Response Message is :" + msg);
 		System.out.println("Billable is :" + bill);
 
-		assertEquals(id, "100");
+		assertEquals(id, 100);
 
 	}
 
