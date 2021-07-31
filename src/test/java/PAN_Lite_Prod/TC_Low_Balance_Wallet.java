@@ -116,7 +116,7 @@ public class TC_Low_Balance_Wallet extends BaseClass {
 		JsonPath js = ReUsableMethods.rawToJson(response);
 		String id = js.get("response_code");
 
-		String name = js.get("result.user_full_name");
+		int name = js.get("result.user_full_name");
 		String msg = js.get("response_message");
 		String bill = js.get("metadata.billable");
 
@@ -127,7 +127,7 @@ public class TC_Low_Balance_Wallet extends BaseClass {
 		System.out.println("Response Message is :" + msg);
 		System.out.println("Billable is :" + bill);
 		
-		assertEquals(id,"112");
+		assertEquals(id,112);
 	}
 
 }

@@ -14,10 +14,6 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
 
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.util.HashMap;
 
 //import org.json.Assertions;
 

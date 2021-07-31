@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RC_Lite_Prod.TC_Valid_Authentication_100">
+      <class name="GST_Lite_Test.TC_Valid_Authentication_100">
         <methods>
           <include name="APIResponse"/>
         </methods>
-      </class> <!-- RC_Lite_Prod.TC_Valid_Authentication_100 -->
+      </class> <!-- GST_Lite_Test.TC_Valid_Authentication_100 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
